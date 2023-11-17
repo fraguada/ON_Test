@@ -21,12 +21,14 @@ add_executable(
   hello_test.cc
 )
 
+add_subdirectory(
+  opennurbs
+)
+
 target_link_libraries(
   hello_test
   GTest::gtest_main
-  /home/ubuntu/dev/opennurbs/build/android_uuid/libandroid_uuid.a
-  /home/ubuntu/dev/opennurbs/build/zlib/libzlib.a
-  /home/ubuntu/dev/opennurbs/build/libopennurbsStatic.a
+  OpenNURBS
 )
 
 include(GoogleTest)

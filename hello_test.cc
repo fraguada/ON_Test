@@ -1,5 +1,5 @@
 #include <gtest/gtest.h>
-#include "../opennurbs/opennurbs_public.h"
+#include "opennurbs/opennurbs_public.h"
 
 TEST(HelloTest, BasicAssertions) {
   // Expect two strings not to be equal.
