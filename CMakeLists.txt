@@ -5,6 +5,9 @@ project(ON_Test1)
 set(CMAKE_CXX_STANDARD 14)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
+set (CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+set (CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR})
+
 include(FetchContent)
 FetchContent_Declare(
   googletest
@@ -21,12 +24,14 @@ add_executable(
   hello_test.cc
 )
 
+add_subdirectory(
+  opennurbs
+)
+
 target_link_libraries(
   hello_test
   GTest::gtest_main
-  /home/ubuntu/dev/opennurbs/build/android_uuid/libandroid_uuid.a
-  /home/ubuntu/dev/opennurbs/build/zlib/libzlib.a
-  /home/ubuntu/dev/opennurbs/build/libopennurbsStatic.a
+  OpenNURBS
 )
 
 include(GoogleTest)
